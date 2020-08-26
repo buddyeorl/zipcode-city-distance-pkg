@@ -1,7 +1,7 @@
 {
   "name": "zipcode-city-distance",
   "version": "1.0.0",
-  "description": "Simple, lightweight zipcode/city distance calculator and all information you need about cities and zipcodes, including coordinates, states etc.",
+  "description": "Simple zipcode/city distance calculator and all information you need about cities and zipcodes, including coordinates, states etc.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
