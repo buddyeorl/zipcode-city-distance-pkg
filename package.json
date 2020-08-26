@@ -21,7 +21,10 @@
     "city",
     "info"
   ],
-  "author": "Alexander Lizarraga",
+  "author": "A. Lizarraga",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/buddyeorl/zipcode-city-distance-module/issues"
