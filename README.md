@@ -19,7 +19,9 @@ const zipCodeData = require('zipcode-city-distance');
 //zipCodeDistance(zipcode1, zipcode2, unit(optional))
 //valid units: 'M' for miles, 'K' for kilometers, 'N' for nautical miles
 let zipCodeDistance = zipCodeData.zipCodeDistance('98006', '33014','M');
+```
 
+```
 2710.6371929140273
 ```
 
@@ -33,7 +35,9 @@ without state parameters:
 //state1:state for city1 abbreviation e.g. 'FL','fl' etc. 
 //state2:state for city2 abbreviation e.g. 'FL','fl' etc. 
 let cityDistance = zipCodeData.cityDistance('blue ball', 'hazardville', 'M');
+```
 
+```
 [ { place1: { city: 'Blue Ball', state: 'PA', zipcode: '17519' },
     place2: { city: 'Hazardville', state: 'CT', zipcode: '06082' },
     distance: 191.89020635690355 },
@@ -53,7 +57,9 @@ with state parameters:
 //state1:state for city1 abbreviation e.g. 'FL','fl' etc. 
 //state2:state for city2 abbreviation e.g. 'FL','fl' etc. 
 let cityDistance = zipCodeData.cityDistance('blue ball', 'hazardville', 'M', 'PA', 'CT');
+```
 
+```
 [ { place1: { city: 'Blue Ball', state: 'PA', zipcode: '17519' },
     place2: { city: 'Hazardville', state: 'CT', zipcode: '06082' },
     distance: 191.89020635690355 },
@@ -70,7 +76,9 @@ let cityDistance = zipCodeData.cityDistance('blue ball', 'hazardville', 'M', 'PA
 //type: "zipcode" to get zip code information or "city" to get city information
 //query: zipcode or city name
 let zipInfo = zipCodeData.getInfo('zipcode', '98006');
+```
 
+```
 {
     "message": "completed your request",
     "data": {
@@ -116,7 +124,9 @@ let zipInfo = zipCodeData.getInfo('zipcode', '98006');
 //type: "zipcode" to get zip code information or "city" to get city information
 //query: zipcode or city name
 let zipInfo = zipCodeData.getInfo('city', 'lakemont');
+```
 
+```
 {
     "message": "completed your request",
     "data": [
