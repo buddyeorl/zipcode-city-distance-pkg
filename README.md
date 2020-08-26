@@ -1,5 +1,6 @@
-# Zip Code - City - Distance
-Simple Zip Code - City distance calculator and all information you need about cities and zipcodes, including coordinates, states etc.
+# US Zip Codes / Cities - Distance / Info / Radius
+
+Simple package for all US Zip Codes and Cities, get the distance between Zip Codes or Cities, get relevant information such as coordinates, cities within Zip Codes, Zip Codes covered by cities, states etc, get all the Zip Codes within certain radius and more.
 
 ### Install
 
@@ -187,3 +188,9 @@ let zipRadius = zipCodeData.getRadius('98006', 5, 'M');
 * add international functionality
 * add a bug tracker
 * add data links.
+
+Don't like the npm package?, don't want to install or run this locally? check the API here:
+
+[https://github.com/buddyeorl/zipcode-distance-api](https://github.com/buddyeorl/zipcode-distance-api)
+
+
