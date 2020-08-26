@@ -1,6 +1,6 @@
 {
   "name": "zipcode-city-distance",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple zipcode/city distance calculator and all information you need about cities and zipcodes, including coordinates, states etc.",
   "main": "app.js",
   "scripts": {

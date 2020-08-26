@@ -55,7 +55,8 @@ module.exports.getAllCityDistances = (pointA, pointB, unit = 'M', stateA = null,
                                 },
                                 distance: calculateDistance(
                                     cityA.zipCode,
-                                    cityB.zipCode
+                                    cityB.zipCode,
+                                    unit
                                 )
                             })
                         }
@@ -79,7 +80,8 @@ module.exports.getAllCityDistances = (pointA, pointB, unit = 'M', stateA = null,
                         },
                         distance: calculateDistance(
                             cityA.zipCode,
-                            cityB.zipCode
+                            cityB.zipCode,
+                            unit
                         )
                     })
                 }

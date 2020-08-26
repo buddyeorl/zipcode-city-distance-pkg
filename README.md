@@ -1,48 +1,148 @@
-# zipcode-city-distance
-Simple, zipcode/city distance calculator and all information you need about cities and zipcodes, including coordinates, states etc.
+# Zip Code - City - Distance
+Simple Zip Code - City distance calculator and all information you need about cities and zipcodes, including coordinates, states etc.
 
-# npm install zipcode-city-distance
+### Install
 
-# require zicode-city-distance module
-
-# how to calculate distance between zipcodes
-
-```javascript
-let zipCodeDistance = zipCodeData.zipCodeDistance('98006', '33014');
-console.log(zipCodeDistance);
+```
+npm i zipcode-city-distance
 ```
 
-# how to calculate distance between cities
+### Usage
+
+```javascript
+const zipCodeData = require('zipcode-city-distance');
+```
+
+### Zip Code Distance
+
+```javascript
+//zipCodeDistance(zipcode1, zipcode2, unit(optional))
+//valid units: 'M' for miles, 'K' for kilometers, 'N' for nautical miles
+let zipCodeDistance = zipCodeData.zipCodeDistance('98006', '33014','M');
+
+2710.6371929140273
+```
+
+### City Distance
 
 without state parameters:
 
 ```javascript
-let cityDistance = zzipCodeData.cityDistance('miami lakes', 'miami');
-console.log(cityDistance);
+//cityDistance(zipcode1, zipcode2, unit(optional), state1(optional), state2(optional)) 
+//units: 'M' for miles, 'K' for kilometers, 'N' for nautical miles
+//state1:state for city1 abbreviation e.g. 'FL','fl' etc. 
+//state2:state for city2 abbreviation e.g. 'FL','fl' etc. 
+let cityDistance = zipCodeData.cityDistance('blue ball', 'hazardville', 'M');
+
+[ { place1: { city: 'Blue Ball', state: 'PA', zipcode: '17519' },
+    place2: { city: 'Hazardville', state: 'CT', zipcode: '06082' },
+    distance: 191.89020635690355 },
+  { place1: { city: 'Blue Ball', state: 'PA', zipcode: '17557' },
+    place2: { city: 'Hazardville', state: 'CT', zipcode: '06082' },
+    distance: 195.19234777104015 } 
+]
 ```
 
-with unit and state parameters
+with state parameters:
 
 ```javascript
-let cityDistance = zipCodeData.cityDistance('miami', 'bellevue', 'M', 'FL', 'WA');
-console.log(cityDistance);
+//cityDistance(city1, city2, unit(optional), state1(optional), state2(optional)) 
+//city1: name of the first city
+//city2: name of the second city
+//units: 'M' for miles, 'K' for kilometers, 'N' for nautical miles
+//state1:state for city1 abbreviation e.g. 'FL','fl' etc. 
+//state2:state for city2 abbreviation e.g. 'FL','fl' etc. 
+let cityDistance = zipCodeData.cityDistance('blue ball', 'hazardville', 'M', 'PA', 'CT');
+
+[ { place1: { city: 'Blue Ball', state: 'PA', zipcode: '17519' },
+    place2: { city: 'Hazardville', state: 'CT', zipcode: '06082' },
+    distance: 191.89020635690355 },
+  { place1: { city: 'Blue Ball', state: 'PA', zipcode: '17557' },
+    place2: { city: 'Hazardville', state: 'CT', zipcode: '06082' },
+    distance: 195.19234777104015 } 
+]
 ```
 
-# how to get zipcode info including cities within that zipcode
+### Zip Code Info
 
 ```javascript
-let zipInfo = zipCodeData.getInfo('zipcode', '98006')
-console.log(zipInfo);
+//getInfo(type, query)
+//type: "zipcode" to get zip code information or "city" to get city information
+//query: zipcode or city name
+let zipInfo = zipCodeData.getInfo('zipcode', '98006');
+
+{
+    "message": "completed your request",
+    "data": {
+        "state": {
+            "code": "53",
+            "short": "WA"
+        },
+        "location": {
+            "lat": 47.557627,
+            "lon": -122.151005,
+            "aLand": 27737341,
+            "aWater": 1886298,
+            "aLandSQMI": 10.709,
+            "aWaterSQMI": 0.728
+        },
+        "places": {
+            "Bellevue": {
+                "placeCode": "5305210",
+                "placeCode2": "02409821",
+                "location": {
+                    "lat": 47.597837,
+                    "lon": -122.15648
+                }
+            },
+            "Newcastle": {
+                "placeCode": "5348645",
+                "placeCode2": "02411243",
+                "location": {
+                    "lat": 47.531664,
+                    "lon": -122.165566
+                }
+            }
+        }
+    }
+}
 ```
 
-# how to get the city info, including zipcodes where city is located (some cities cover more than one zipcode) and if there are cities with the same name in different states.
+
+### City Info
 
 ```javascript
-let cityInfo = zipCodeData.getInfo('city', 'lakemont')
-console.log(cityInfo);
+//getInfo(type, query)
+//type: "zipcode" to get zip code information or "city" to get city information
+//query: zipcode or city name
+let zipInfo = zipCodeData.getInfo('city', 'lakemont');
+
+{
+    "message": "completed your request",
+    "data": [
+        {
+            "lat": 40.465434,
+            "lon": -78.391752,
+            "state": {
+                "code": "42",
+                "short": "PA"
+            },
+            "zipCode": "16602"
+        },
+        {
+            "lat": 40.465434,
+            "lon": -78.391752,
+            "state": {
+                "code": "42",
+                "short": "PA"
+            },
+            "zipCode": "16648"
+        }
+    ]
+}
 ```
 
-# todo:
+### Todos:
 * get the distance between two cities as per their lat and lon and not by their zipcode
 * add radius functionality for zipcodes or cities to show zipcodes or cities within certain radius.
 * add international functionality
