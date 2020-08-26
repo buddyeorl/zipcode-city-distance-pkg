@@ -142,7 +142,7 @@ let zipInfo = zipCodeData.getInfo('city', 'lakemont');
 }
 ```
 
-### Todos:
+### TODO:
 * get the distance between two cities as per their lat and lon and not by their zipcode
 * add radius functionality for zipcodes or cities to show zipcodes or cities within certain radius.
 * add international functionality
