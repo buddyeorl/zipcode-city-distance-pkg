@@ -157,9 +157,33 @@ let zipInfo = zipCodeData.getInfo('city', 'lakemont');
 }
 ```
 
+
+### Zip Code Radius
+
+Get all zipcodes within a radius of this zipcode in ascending order.
+
+```javascript
+//getRadius(zipcode,radius, unit)
+//zipcode: str - zipcode
+//radius: int - radius you want to find zipcodes around in Miles, Kilometer or Nautical Mile
+//units: char - 'M' for miles, 'K' for kilometers, 'N' for nautical miles
+let zipRadius = zipCodeData.getRadius('98006', 5, 'M');
+```
+
+```javascript
+//result
+[ { zipcode: '98056', distance: 3.613853931442833 },
+  { zipcode: '98040', distance: 3.765403793043263 },
+  { zipcode: '98007', distance: 3.89502983948142 },
+  { zipcode: '98005', distance: 4.018115501775772 },
+  { zipcode: '98008', distance: 4.099796739847524 },
+  { zipcode: '98059', distance: 4.449603369443228 },
+  { zipcode: '98004', distance: 4.899415818312604 } ]
+```
+
 ### TODO:
-* get the distance between two cities as per their lat and lon and not by their zipcode
-* add radius functionality for zipcodes or cities to show zipcodes or cities within certain radius.
+* get the distance between two cities by lat and lon and not by their zipcode.
+* add radius functionality for cities.
 * add international functionality
 * add a bug tracker
 * add data links.
