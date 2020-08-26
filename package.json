@@ -1,6 +1,6 @@
 {
   "name": "zipcode-city-distance",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Simple zipcode/city distance calculator and all information you need about cities and zipcodes, including coordinates, states etc.",
   "main": "app.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "city",
     "info"
   ],
-  "author": "A. Lizarraga",
+  "author": "A. Lizarraga <alexdatavault@gmail.com> <https://github.com/buddyeorl>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/buddyeorl/zipcode-city-distance-module/issues"
