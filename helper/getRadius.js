@@ -1,5 +1,6 @@
 // importing zipCode data file
-let zipCodes = require('./allZipCodesFilesWithCityNames').allZipCodesFilesWithCityNames;
+//let zipCodes = require('./allZipCodesFilesWithCityNames').allZipCodesFilesWithCityNames;
+let zipCodes = require('./allZipCodesFilesWithCityNamesShort').allZipCodesFilesWithCityNamesShort;
 
 // importing zipCode data file
 // let cities = require('./allCityData').allCityData;
@@ -34,6 +35,6 @@ module.exports.getRadius = (zipCode, limit, unit = 'M') => {
     if (results.length > 0) {
         results.sort((a, b) => a.distance - b.distance);
     }
-    console.log((results));
+    //console.log((results));
     return results;
 }

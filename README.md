@@ -36,18 +36,17 @@ without state parameters:
 //units: 'M' for miles, 'K' for kilometers, 'N' for nautical miles
 //state1:state for city1 abbreviation e.g. 'FL','fl' etc. 
 //state2:state for city2 abbreviation e.g. 'FL','fl' etc. 
-let cityDistance = zipCodeData.cityDistance('blue ball', 'hazardville', 'M');
+let cityDistance = zipCodeData.cityDistance('miami lakes', 'los angeles', 'M'); //distance between Miami Lakes  and Los Angeles 
 ```
 
 ```javascript
-//result
-[ { place1: { city: 'Blue Ball', state: 'PA', zipcode: '17519' },
-    place2: { city: 'Hazardville', state: 'CT', zipcode: '06082' },
-    distance: 191.89020635690355 },
-  { place1: { city: 'Blue Ball', state: 'PA', zipcode: '17557' },
-    place2: { city: 'Hazardville', state: 'CT', zipcode: '06082' },
-    distance: 195.19234777104015 } 
-]
+//result array with 2 objects because there are two cities named "los angeles" one in Texas and one in California.
+[ { place1: { city: 'Miami Lakes', state: 'FL', zipcode: [ '33014', '33016', '33018' ] },
+    place2: { city: 'Los Angeles', state: 'TX', zipcode: [ '78580' ] },
+    distance: 1082.6193359144372 },
+  { place1: { city: 'Miami Lakes', state: 'FL', zipcode: [ '33014', '33016', '33018' ] },
+    place2: { city: 'Los Angeles', state: 'CA', zipcode: [ '90001','90002', ... more zipcodes here ... ,'91607','91608'] }, //total 133 zipcodes for Los Angeles, CA
+    distance: 2333.4166337302295 } ]
 ```
 
 with state parameters:
@@ -59,18 +58,14 @@ with state parameters:
 //units: 'M' for miles, 'K' for kilometers, 'N' for nautical miles
 //state1:state for city1 abbreviation e.g. 'FL','fl' etc. 
 //state2:state for city2 abbreviation e.g. 'FL','fl' etc. 
-let cityDistance = zipCodeData.cityDistance('blue ball', 'hazardville', 'M', 'PA', 'CT');
+let cityDistance = zipCodeData.cityDistance('miami lakes', 'los angeles', 'M', 'FL', 'TX'); //distance between Miami Lakes, FL and Los Angeles, TX
 ```
 
 ```javascript
-//result
-[ { place1: { city: 'Blue Ball', state: 'PA', zipcode: '17519' },
-    place2: { city: 'Hazardville', state: 'CT', zipcode: '06082' },
-    distance: 191.89020635690355 },
-  { place1: { city: 'Blue Ball', state: 'PA', zipcode: '17557' },
-    place2: { city: 'Hazardville', state: 'CT', zipcode: '06082' },
-    distance: 195.19234777104015 } 
-]
+//result array with 1 object as we specified city name and state.
+[ { place1: { city: 'Miami Lakes', state: 'FL', zipcode: [ '33014', '33016', '33018' ] },
+    place2: { city: 'Los Angeles', state: 'TX', zipcode: [ '78580' ] },
+    distance: 1082.6193359144372 } ]
 ```
 
 ### Zip Code Info
@@ -83,34 +78,23 @@ let zipInfo = zipCodeData.getInfo('zipcode', '98006');
 ```
 
 ```javascript
-//result
+//result with zipcode information including cities within the zipcode
 {
     "message": "completed your request",
     "data": {
-        "state": {
-            "code": "53",
-            "short": "WA"
-        },
+        "state":"WA",
         "location": {
             "lat": 47.557627,
             "lon": -122.151005,
-            "aLand": 27737341,
-            "aWater": 1886298,
-            "aLandSQMI": 10.709,
-            "aWaterSQMI": 0.728
         },
         "places": {
             "Bellevue": {
-                "placeCode": "5305210",
-                "placeCode2": "02409821",
                 "location": {
                     "lat": 47.597837,
                     "lon": -122.15648
                 }
             },
             "Newcastle": {
-                "placeCode": "5348645",
-                "placeCode2": "02411243",
                 "location": {
                     "lat": 47.531664,
                     "lon": -122.165566
@@ -121,40 +105,24 @@ let zipInfo = zipCodeData.getInfo('zipcode', '98006');
 }
 ```
 
-
 ### City Info
 
 ```javascript
 //getInfo(type, query)
 //type: "zipcode" to get zip code information or "city" to get city information
 //query: zipcode or city name
-let zipInfo = zipCodeData.getInfo('city', 'lakemont');
+let zipInfo = zipCodeData.getInfo('city', 'lakemont'); // this will also handle cities with same name in different state, like Miami which exists in FL, MO,OK,TX etc
 ```
 
 ```javascript
-//result
-{
-    "message": "completed your request",
-    "data": [
-        {
-            "lat": 40.465434,
-            "lon": -78.391752,
-            "state": {
-                "code": "42",
-                "short": "PA"
-            },
-            "zipCode": "16602"
-        },
-        {
-            "lat": 40.465434,
-            "lon": -78.391752,
-            "state": {
-                "code": "42",
-                "short": "PA"
-            },
-            "zipCode": "16648"
-        }
-    ]
+//result, property data is an array of cities that match query.
+{ message: 'completed your request',
+  data:
+   [ {  lat: 40.465434, 
+        lon: -78.391752, 
+        state: 'PA', 
+        zipCode: ["16602","16648"] 
+    } ] 
 }
 ```
 

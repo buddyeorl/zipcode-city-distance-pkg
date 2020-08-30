@@ -1,6 +1,7 @@
 
 // importing zipCode data file
-let zipCodes = require('./allZipCodesFilesWithCityNames').allZipCodesFilesWithCityNames;
+//let zipCodes = require('./allZipCodesFilesWithCityNames').allZipCodesFilesWithCityNames;
+let zipCodes = require('./allZipCodesFilesWithCityNamesShort').allZipCodesFilesWithCityNamesShort;
 
 //distance between two points given it's latitude and longitude
 module.exports.calculateDistance = (pointA, pointB, unit = 'M') => {
@@ -12,6 +13,9 @@ module.exports.calculateDistance = (pointA, pointB, unit = 'M') => {
     if (zipCodes[pointA] && zipCodes[pointB]) {
         a = zipCodes[pointA].location;
         b = zipCodes[pointB].location;
+    } else if (pointA.lat && pointB.lat) {
+        a = pointA;
+        b = pointB;
     } else {
         return { error: !zipCodes[pointA] ? `${pointA} not found in our zipcode database` : !zipCodes[pointB] ? `${pointB} not found in our zipcode database` : 'unknown error, please try again' }
     }

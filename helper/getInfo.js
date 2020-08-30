@@ -1,8 +1,10 @@
 // importing zipCode data file
-let zipCodes = require('./allZipCodesFilesWithCityNames').allZipCodesFilesWithCityNames;
+//let zipCodes = require('./allZipCodesFilesWithCityNames').allZipCodesFilesWithCityNames;
+let zipCodes = require('./allZipCodesFilesWithCityNamesShort').allZipCodesFilesWithCityNamesShort;
 
 // importing zipCode data file
-let cities = require('./allCityData').allCityData;
+//let cities = require('./allCityData').allCityData;
+let cities = require('./shortCityData').shortCityData;
 
 module.exports.getInfo = (type, query) => {
 

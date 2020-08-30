@@ -1,2 +1,6 @@
 # Server node_modules
 /node_modules/
+
+#ignoring for version 1.0.5
+/helper/allCityData.js
+/helper/allZipCodesFilesWithCityNames.js
