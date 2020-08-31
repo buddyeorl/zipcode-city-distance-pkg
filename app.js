@@ -5,6 +5,9 @@ const getAllCityDistances = require('./helper/getAllCityDistances').getAllCityDi
 const getInfo = require('./helper/getInfo').getInfo;
 const getRadius = require('./helper/getRadius').getRadius;
 
+//test
+//const getCityRadius = require('./helper/getRadius').getCityRadius;
+
 //console.log(zipCodeData.zipCodeDistance('98006', '33014'));
 //console.log(zipCodeData.cityDistance('miami lakes', 'miami'));
 //console.log(zipCodeData.cityDistance('miami', 'bellevue', 'M', 'FL', 'WA'));
@@ -12,6 +15,7 @@ const getRadius = require('./helper/getRadius').getRadius;
 //console.log(zipCodeData.getRadius('98006', 50, 'M'));
 
 //console.log(getRadius('98006', 5, 'M')); //passed
+//console.log(getCityRadius('miami', 5, 'M')); //didnt pass
 //console.log(calculateDistance('', '98006', 'M')); // passed
 //console.log(getAllCityDistances('miami lakes', 'los angeles', 'M', 'FL', 'TX')); // didn't pass
 //console.log(getInfo('city', 'miami')); //passed
