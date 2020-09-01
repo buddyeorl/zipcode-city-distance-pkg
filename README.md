@@ -135,7 +135,7 @@ Get all zipcodes within a radius of this zipcode in ascending order.
 //getRadius(zipcode,radius, unit)
 //zipcode: str - zipcode
 //radius: int - radius you want to find zipcodes around in Miles, Kilometer or Nautical Mile
-//units: char - 'M' for miles, 'K' for kilometers, 'N' for nautical miles
+//units: char - 'M' for miles, 'K' for kilometers, 'N'  for nautical miles
 let zipRadius = zipCodeData.getRadius('98006', 5, 'M');
 ```
 
@@ -151,7 +151,6 @@ let zipRadius = zipCodeData.getRadius('98006', 5, 'M');
 ```
 
 ### TODO:
-* get the distance between two cities by lat and lon and not by their zipcode.
 * add radius functionality for cities.
 * add international functionality
 * add a bug tracker
