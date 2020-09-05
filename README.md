@@ -32,7 +32,7 @@ let zipCodeDistance = zipCodeData.zipCodeDistance('98006', '33014','M');
 without state parameters:
 
 ```javascript
-//cityDistance(zipcode1, zipcode2, unit(optional), state1(optional), state2(optional)) 
+//cityDistance(city1, city2, unit(optional), state1(optional), state2(optional)) 
 //units: 'M' for miles, 'K' for kilometers, 'N' for nautical miles
 //state1:state for city1 abbreviation e.g. 'FL','fl' etc. 
 //state2:state for city2 abbreviation e.g. 'FL','fl' etc. 
@@ -136,7 +136,7 @@ Get all zipcodes within a radius of this zipcode in ascending order.
 //zipcode: str - zipcode
 //radius: int - radius you want to find zipcodes around in Miles, Kilometer or Nautical Mile
 //units: char - 'M' for miles, 'K' for kilometers, 'N'  for nautical miles
-let zipRadius = zipCodeData.getRadius('98006', 5, 'M');
+//let zipRadius = zipCodeData.getRadius('98006', 5, 'M');
 ```
 
 ```javascript
@@ -156,8 +156,8 @@ let zipRadius = zipCodeData.getRadius('98006', 5, 'M');
 * add a bug tracker
 * add data links.
 
-Don't like the npm package?, don't want to install or run this locally? check the API here:
+Like it here:
 
-[https://github.com/buddyeorl/zipcode-distance-api](https://github.com/buddyeorl/zipcode-distance-api)
+[https://github.com/buddyeorl/zipcode-city-distance-pkg](https://github.com/buddyeorl/zipcode-city-distance-pkg)
 
 
