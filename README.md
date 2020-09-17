@@ -136,7 +136,7 @@ Get all zipcodes within a radius of this zipcode in ascending order.
 //zipcode: str - zipcode
 //radius: int - radius you want to find zipcodes around in Miles, Kilometer or Nautical Mile
 //units: char - 'M' for miles, 'K' for kilometers, 'N'  for nautical miles
-//let zipRadius = zipCodeData.getRadius('98006', 5, 'M');
+let zipRadius = zipCodeData.getRadius('98006', 5, 'M');
 ```
 
 ```javascript
